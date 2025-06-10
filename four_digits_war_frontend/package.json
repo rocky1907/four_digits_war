@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capacitor/cli": "^5.7.8",
+    "@capacitor/core": "^5.7.8"
+  }
+}

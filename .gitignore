@@ -1,0 +1,88 @@
+# ====================================
+# === PYTHON / DJANGO BACKEND ========
+# ====================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django-related
+*.log
+local_settings.py
+db.sqlite3
+media/
+*.pot
+
+# Environment variables
+.env
+.env.*
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+
+# MyPy
+.mypy_cache/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# ====================================
+# === ANGULAR + IONIC FRONTEND =======
+# ====================================
+
+# Node modules
+node_modules/
+
+# Ionic build output
+www/
+
+# Angular build output
+dist/
+out-tsc/
+
+# Angular temporary files
+.angular/
+.angular-cache/
+.tmp/
+npm-debug.log*
+
+# Environment
+src/environments/environment*.ts
+
+# Package lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Compiled files
+*.js
+*.map
+
+# VSCode and WebStorm
+.vscode/
+.idea/
+
+# ====================================
+# === GLOBAL =========================
+# ====================================
+
+.DS_Store
+Thumbs.db

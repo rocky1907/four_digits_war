@@ -1,0 +1,37 @@
+2025-06-10 16:50:21,727 [API|views|INFO] New user registration attempt: player1@test.com
+2025-06-10 16:50:21,758 [API|serializers|DEBUG] Creating user with data: {'email': 'player1@test.com', 'username': 'player1'}
+2025-06-10 16:50:22,009 [API|serializers|INFO] User created in DB: player1@test.com
+2025-06-10 16:50:22,009 [API|views|INFO] User registered successfully: player1@test.com
+2025-06-10 16:50:30,173 [API|views|INFO] New user registration attempt: player2@test.com
+2025-06-10 16:50:30,175 [API|serializers|DEBUG] Creating user with data: {'email': 'player2@test.com', 'username': 'player2'}
+2025-06-10 16:50:30,430 [API|serializers|INFO] User created in DB: player2@test.com
+2025-06-10 16:50:30,430 [API|views|INFO] User registered successfully: player2@test.com
+2025-06-10 21:50:26,289 [API|views|INFO] User player2@test.com requested their own profile
+2025-06-10 21:50:57,524 [API|views|INFO] User player2@test.com requested their own profile
+2025-06-10 21:56:45,696 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:00:49,103 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:07:36,865 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:07:38,655 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:07:40,303 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:08:59,426 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:10:05,236 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:10:07,656 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:15:12,687 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:15:56,615 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:15:57,505 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:19:49,213 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:23:00,859 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:33:44,541 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:39:36,251 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:39:48,669 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:40:19,049 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 22:44:11,401 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:02:42,739 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:08:20,204 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:08:39,079 [API|views|INFO] User player2@test.com requested their own profile
+2025-06-10 23:19:07,694 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:25:51,474 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:27:00,464 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:27:43,882 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:31:12,440 [API|views|INFO] User player1@test.com requested their own profile
+2025-06-10 23:34:38,749 [API|views|INFO] User player1@test.com requested their own profile
