@@ -107,7 +107,7 @@ LOGGING = {
         'all_api': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.join('logs', 'all_api.log'),
+            'filename': str(LOG_DIR / 'all_api.log'),  # <- Aquí uso ruta absoluta con Path
             'formatter': 'api'
         },
     },
