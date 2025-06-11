@@ -1,1 +1,1 @@
-web: gunicorn four_digits_war_backend.four_digits_war_backend.wsgi:application
+web: gunicorn four_digits_war_backend.wsgi:application
