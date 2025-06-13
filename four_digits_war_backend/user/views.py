@@ -1,34 +1,32 @@
-# views.py
-import logging
 from rest_framework import generics, permissions
 from authentication.models import User
 from .serializers import UserSerializer, UserUpdateSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
+import logging
 
 logger = logging.getLogger('all_api')
 
+
 class UserListView(generics.ListAPIView):
     """
-    Provides an endpoint for admin users to retrieve a list of all users.
-    Logs the email of the requester for audit purposes.
+    List all users – only for authenticated users.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
     def list(self, request, *args, **kwargs):
         logger.info(f"User {request.user.email} requested the user list")
         return super().list(request, *args, **kwargs)
 
+
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
-    Allows admin users to retrieve, update, or delete a specific user by ID.
-    Selects serializer dynamically depending on request method (read vs update).
-    Logs all access and modifications for traceability.
+    Retrieve/update/delete a user by ID – requires authentication.
     """
     queryset = User.objects.all()
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
         if self.request.method in ['PUT', 'PATCH']:
@@ -47,10 +45,10 @@ class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
         logger.warning(f"User {request.user.email} deleted user id {kwargs.get('pk')}")
         return super().destroy(request, *args, **kwargs)
 
+
 class UserMeView(APIView):
     """
-    Endpoint for authenticated users to retrieve their own profile information.
-    Logs the user email for access tracking.
+    Retrieve the currently authenticated user's own profile.
     """
     permission_classes = [permissions.IsAuthenticated]
 

@@ -1,26 +1,23 @@
 # views.py
-from rest_framework import generics, permissions
-from .serializers import RegisterSerializer
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User
-import logging
+from .serializers import QuickLoginSerializer
 
-logger = logging.getLogger('all_api')
+from rest_framework.generics import GenericAPIView
 
-class RegisterView(generics.CreateAPIView):
-    """
-    Handles user registration.
+class QuickLoginView(GenericAPIView):
+    serializer_class = QuickLoginSerializer
 
-    Logs registration attempts, successes, and errors for monitoring.
-    """
-    queryset = User.objects.all()
-    serializer_class = RegisterSerializer
-
-    def create(self, request, *args, **kwargs):
-        logger.info("New user registration attempt: %s", request.data.get('email'))
-        try:
-            response = super().create(request, *args, **kwargs)
-            logger.info("User registered successfully: %s", response.data.get('email'))
-            return response
-        except Exception as err:
-            logger.error("Error registering user: %s", str(err))
-            raise
+    def post(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        refresh = RefreshToken.for_user(user)
+        return Response({
+            'refresh': str(refresh),
+            'access': str(refresh.access_token),
+            'username': user.username,
+        }, status=status.HTTP_200_OK)
